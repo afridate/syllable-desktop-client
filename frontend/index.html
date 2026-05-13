@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karaoke Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-cover" id="bgCover"></div>
+    <div class="overlay"></div>
+
+    <div class="container">
+        <div class="track-info" id="trackInfo">
+            <img class="cover" id="cover" alt="Cover">
+            <div class="track-text">
+                <div class="track-title" id="title">Загрузите JSON файл</div>
+                <div class="track-artist" id="artist"></div>
+            </div>
+        </div>
+
+        <div class="audio-player">
+            <audio id="audio" controls></audio>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="lyrics-container" id="lyricsContainer">
+            <div style="text-align: center; color: rgba(255,255,255,0.6);">
+                Загрузите JSON файл с текстом и MP3 файл
+            </div>
+        </div>
+
+        <div class="instruction">
+            <strong>Как использовать:</strong><br>
+            1. Выберите JSON файл (<code>master_sync.json</code>)<br>
+            2. Выберите MP3 файл<br>
+            3. Нажмите Play<br><br>
+            <input type="file" id="jsonFile" accept=".json">
+            <input type="file" id="mp3File" accept=".mp3,.wav">
+        </div>
+    </div>
+
+    <script src="player.js"></script>
+</body>
+</html>
