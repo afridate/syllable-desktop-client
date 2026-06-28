@@ -4,16 +4,19 @@ import re
 import requests
 from config import PASSWORD
 import json
-
+from linux import get_media_info
 
 async def get_song():
-    #media = await get_media_info()
+    media = await get_media_info()
+
+    if media is None:
+        return None
     # заглушка, потом поменять!!
-    media = {
+    #media = {
         "title": "ванна, красный пол",
         "artist": "CUPSIZE",
         "playback_status": "Playing"
-    }
+    #}
 
     slug = slugify(media["artist"] + "_" + media["title"])
 
